@@ -1,0 +1,29 @@
+name: "Integration tests"
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+jobs:
+  main:
+    name: Run k8s advanced exercices
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Stop apparmor
+        run: |
+          sudo /etc/init.d/apparmor stop
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '^1.19.2'
+      - name: Create k8s/kind cluster
+        run: |
+          go install github.com/k8s-school/ktbx@v1.1.1-rc17
+          ktbx create -c
+      - name: Install ink
+        run: |
+          go install github.com/k8s-school/ink@v0.0.1-rc3
+      - name: Install prometheus
+        run: |
+          ./install.sh
