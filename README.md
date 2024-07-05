@@ -2,7 +2,7 @@
 
 An up and running k8s cluster
 
-NOTE: Successfully tested on kind-v0.6.1 (2020-01-10) and helm-v3.0.1
+NOTE: Successfully tested on kind-v0.23.0
 
 # Ex1: Install prometheus-operator
 
