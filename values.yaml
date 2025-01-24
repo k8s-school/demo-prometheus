@@ -15,4 +15,17 @@ prometheus:
           resources:
             requests:
               storage: 50Gi
+    podMonitorSelector:
+      matchNames:
+        monitoring: true
+    podMonitorNamespaceSelector:
+      matchNames:
+        monitoring: true
+    serviceMonitorSelector:
+      matchLabels:
+        monitoring: true
+    serviceMonitorNamespaceSelector:
+      matchNames:
+         monitoring: true
+
 
