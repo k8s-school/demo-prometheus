@@ -17,15 +17,15 @@ prometheus:
               storage: 50Gi
     podMonitorSelector:
       matchNames:
-        monitoring: true
+        monitoring: "true"
     podMonitorNamespaceSelector:
       matchNames:
-        monitoring: true
+        monitoring: "true"
     serviceMonitorSelector:
       matchLabels:
-        monitoring: true
+        monitoring: "true"
     serviceMonitorNamespaceSelector:
       matchNames:
-         monitoring: true
+         monitoring: "true"
 
 
