@@ -15,17 +15,21 @@ prometheus:
           resources:
             requests:
               storage: 50Gi
-    podMonitorSelector:
-      matchLabels:
-        monitoring: "true"
-    podMonitorNamespaceSelector:
-      matchLabels:
-        monitoring: "true"
-    serviceMonitorSelector:
-      matchLabels:
-        monitoring: "true"
-    serviceMonitorNamespaceSelector:
-      matchLabels:
-         monitoring: "true"
+    serviceMonitorSelectorNilUsesHelmValues: true
+    podMonitorSelectorNilUsesHelmValues: true
+
+    # Code below prevent use of default serviceMonitor used for monitoring kubernetes components
+    # podMonitorSelector:
+    #   matchLabels:
+    #     monitoring: "true"
+    # podMonitorNamespaceSelector:
+    #   matchLabels:
+    #     monitoring: "true"
+    # serviceMonitorSelector:
+    #   matchLabels:
+    #     monitoring: "true"
+    # serviceMonitorNamespaceSelector:
+    #   matchLabels:
+    #      monitoring: "true"
 
 

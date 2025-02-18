@@ -18,7 +18,7 @@ kubectl label ns "$NS" "name=$NS"
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts || echo "Unable to add repo prometheus-community"
 helm repo add stable https://charts.helm.sh/stable --force-update
 helm repo update
-helm install --version "65.4.0" prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring  -f "$DIR"/values.yaml --create-namespace
+helm install --version "69.3.0" prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring  -f "$DIR"/values.yaml --create-namespace
 
 echo "Exercice: access prometheus-grafana and other services using the website documentation"
 echo "1. Watch all pod in monitoring namespace"
