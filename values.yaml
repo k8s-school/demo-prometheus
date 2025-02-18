@@ -15,8 +15,8 @@ prometheus:
           resources:
             requests:
               storage: 50Gi
-    serviceMonitorSelectorNilUsesHelmValues: true
-    podMonitorSelectorNilUsesHelmValues: true
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
 
     # Code below prevent use of default serviceMonitor used for monitoring kubernetes components
     # podMonitorSelector:
