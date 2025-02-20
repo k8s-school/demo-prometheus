@@ -29,6 +29,4 @@ jobs:
           ./install.sh
       - name: Check example-app podmonitor
         run: |
-          kubectl apply -f ./manifests
-          kubectl get podmonitors.monitoring.coreos.com -n example-app
-          ./curl.sh
+          ./external-pod-monitor.sh
